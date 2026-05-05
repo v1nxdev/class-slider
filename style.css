@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  font-family: Arial, sans-serif;
+  color: white;
+  min-height: 100vh;
+}
+
+.page {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-top: 50px;
+  text-align: center;
+}
+
+.page h1 {
+  font-size: 40px;
+  margin-bottom: 8px;
+}
+
+.page p {
+  color: #cbd5e1;
+  margin-bottom: 25px;
+}
+
+.slider {
+  position: relative;
+  height: 450px;
+  overflow: hidden;
+  border-radius: 22px;
+  background: #020617;
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.45);
+}
+
+.slides {
+  display: flex;
+  height: 100%;
+  transition: transform 0.45s ease;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+}
+
+.text {
+  position: absolute;
+  z-index: 2;
+  left: 35px;
+  bottom: 35px;
+  text-align: left;
+}
+
+.text h2 {
+  font-size: 34px;
+}
+
+.text span {
+  color: #e5e7eb;
+}
+
+.slider-btn {
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.75);
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.slider-btn:hover {
+  background: #38bdf8;
+}
+
+.prev-btn {
+  left: 18px;
+}
+
+.next-btn {
+  right: 18px;
+}
+
+.dots {
+  position: absolute;
+  z-index: 5;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 9px;
+}
+
+.dot {
+  width: 11px;
+  height: 11px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.45);
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.dot.active {
+  width: 28px;
+  border-radius: 20px;
+  background: #38bdf8;
+}
+
+@media (max-width: 700px) {
+  .slider {
+    height: 320px;
+  }
+
+  .page h1 {
+    font-size: 30px;
+  }
+
+  .text {
+    left: 22px;
+    bottom: 30px;
+  }
+
+  .text h2 {
+    font-size: 26px;
+  }
+}
